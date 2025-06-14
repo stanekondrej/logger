@@ -27,7 +27,7 @@ func (l *Logger) Infoln(args ...any) {
 
 // Prints out some info, with printf-like format specifiers.
 func (l *Logger) Infof(format string, args ...any) {
-	l.inner.Printf(fmt.Sprintf("INFO: %s", format), args)
+	l.inner.Printf(fmt.Sprint("INFO:", format), args)
 }
 
 // Prints out an error.
@@ -37,7 +37,7 @@ func (l *Logger) Errorln(args ...any) {
 
 // Prints out an error, with printf-like format specifiers.
 func (l *Logger) Errorf(format string, args ...any) {
-	l.inner.Printf(fmt.Sprintf("ERROR: %s", format), args)
+	l.inner.Printf(fmt.Sprint("ERROR:", format), args)
 }
 
 // Prints out an error and terminates execution.
@@ -47,5 +47,5 @@ func (l *Logger) Fatalln(args ...any) {
 
 // Prints out an error and terminates execution, with printf-like format specifiers.
 func (l *Logger) Fatalf(format string, args ...any) {
-	l.inner.Fatalf(fmt.Sprintf("FATAL: %s", format), args)
+	l.inner.Fatalf(fmt.Sprint("FATAL:", format), args)
 }
